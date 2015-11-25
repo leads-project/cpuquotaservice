@@ -1,8 +1,12 @@
+#
+# (C) Do Le Quoc, 2014
+#
+
 from flask import Flask
 
 app = Flask(__name__)
 
 from cpuinfo import view
 
-print "CPU quota info service starting up... "
+print "CPU info service starting up... "
 

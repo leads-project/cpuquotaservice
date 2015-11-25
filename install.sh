@@ -1,8 +1,17 @@
-#!/usr/bin/env bash
-#
-# (C) Do Le Quoc TUD, 
-#
+#!/bin/bash
+set -o nounset
+set -o errexit
 
-sudo apt-get install python-pip
-sudo pip install flask
-sudo pip install ujson
+BASEDIR=`dirname $0`
+
+activate () {
+  set +u
+  . ./cpuquota_virtualenv/bin/activate
+  set -u
+}
+
+virtualenv cpuquota_virtualenv
+
+activate
+
+pip install -r requirements.txt

@@ -1,11 +1,12 @@
 #
-# (C) Do Le Quoc TUD
+# (C) Do Le Quoc, 2014
 #
 
-from cpuquota import app
+from cpuinfo import app
+import os
 
-hostName='127.0.0.1'
-portNumber = 8080
+hostName = os.environ['CPUQUOTA_LISTEN_IP'] 
+portNumber = int(os.environ['CPUQUOTA_PORT'])
 
 app.run(host=hostName, port=portNumber, debug = True)
 
